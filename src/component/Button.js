@@ -20,6 +20,7 @@ export default Button
 
 const styles = StyleSheet.create({
     btnContainer: {
+        // backgroundColor: theme.colors.secondary,
         borderRadius: 10,
         borderWidth: 1,
         height: 47,
