@@ -1,36 +1,37 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, TextInput, TouchableOpacity, View, Modal, Alert } from 'react-native'
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 
 import { FontFamilyName, Strings } from '../core/strings'
 import { theme } from '../core/theme'
 import normalize from "react-native-normalize";
 import Calender from '../assets/svgs/Calender.svg'
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import MonthSelect from './MonthSelect';
 import YearSelect from './YearSelect';
+import moment from 'moment';
 
 
 const DurationSelection = () => {
-    const [checked, setChecked] = useState(false)
     const [monthModal, setMonthModal] = useState(false)
     const [month, setMonth] = useState('Select Month');
+    // console.log('month==>', month)
     const [year, setyear] = useState('Select Year');
     const [monthNumber, setMonthNumber] = useState(null)
-    console.log('monthnumber==>', monthNumber)
+    // console.log('monthnumber==>', monthNumber)
+
+    // let endMonth = moment().add(2, 'months').calendar()
+    let endMonth = moment().add(1, 'days').calendar();
+    let addMonth = moment().format("MMMM")
 
 
 
 
-
-    const years = ['2022', '2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030',]
-
-    var data = [
-        { title: 'Me' },
-        { title: 'Hunain' },
-        { title: 'Taimoor' },
-        { title: 'Ali' },
-        { title: 'Sulehri' },
-    ]
+    // var data = [
+    //     { title: 'Me' },
+    //     { title: 'Hunain' },
+    //     { title: 'Taimoor' },
+    //     { title: 'Ali' },
+    //     { title: 'Sulehri' },
+    // ]
     return (
         <>
             <Text style={styles.textStyle}>{Strings.SelectDuration}</Text>
@@ -83,7 +84,8 @@ const DurationSelection = () => {
                 </View>
                 <View>
                     <Text style={styles.dateinfoText}>{Strings.Month}</Text>
-                    <Text style={styles.dateinfoTextLight}>November</Text>
+                    <Text style={styles.dateinfoTextLight}>{addMonth}</Text>
+
                 </View>
                 <View>
                     <Text style={styles.dateinfoText}>{Strings.Year}</Text>
@@ -91,32 +93,6 @@ const DurationSelection = () => {
                 </View>
             </View>
             <Text style={styles.memberText}>{Strings.MemberSelection}</Text>
-
-            <View>
-                {
-                    data.map((item, index) => {
-                        return (
-                            <View
-                                key={index}
-                                style={styles.selectionContainer}>
-                                <View style={styles.selectionInnerContainer}>
-                                    <Text style={styles.selectionTextStyle}>{item.title}</Text>
-                                    <TouchableOpacity
-                                        onPress={() => setChecked(!checked)}
-                                        style={checked ? styles.active : styles.inActive}>
-                                        {checked && <MaterialIcons name='done' color={"white"} size={normalize(20)} />}
-
-
-                                    </TouchableOpacity>
-                                </View>
-                            </View>
-                        )
-                    })
-                }
-            </View>
-
-
-
         </>
     )
 }
@@ -230,24 +206,5 @@ const styles = StyleSheet.create({
         color: theme.colors.primary,
 
     },
-    active: {
-        width: 25,
-        height: 25,
-        borderWidth: 0.5,
-        borderColor: 'black',
-        backgroundColor: '#2B3577',
-        alignItems: 'center', justifyContent: 'center'
-    },
-    inActive: {
-        width: 25,
-        height: 25,
-        borderWidth: 0.5,
-        borderColor: 'black',
-    },
-    active1: {
-        color: 'red'
-    },
-    inactive1: {
-        color: 'blue'
-    }
+
 })

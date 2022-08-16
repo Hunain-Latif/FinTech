@@ -21,6 +21,8 @@ target 'FinTech' do
 
   pod 'RNSVG', :path => '../node_modules/react-native-svg'
 
+  pod 'RNCCheckbox', :path => '../node_modules/@react-native-community/checkbox'
+
   target 'FinTechTests' do
     inherit! :complete
     # Pods for testing

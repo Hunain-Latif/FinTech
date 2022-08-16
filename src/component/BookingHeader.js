@@ -13,21 +13,22 @@ const BookingHeader = () => {
     const navigation = useNavigation();
 
     return (
-        <View>
-            <View style={styles.header}>
-                <BookingHeaderLogo />
-            </View>
+
+        <View style={styles.container}>
             <View style={styles.goBackContainer}>
                 <TouchableOpacity
                     onPress={() => {
                         navigation.goBack()
                     }}
                 >
-                    <Ionicons name='arrow-back' size={24} color={theme.colors.primary} />
+                    <Ionicons name='arrow-back' size={24} color={theme.colors.White} />
                 </TouchableOpacity>
-                <Text style={styles.textStyle}>Private Office</Text>
             </View>
+            <BookingHeaderLogo />
+            <Text>                 </Text>
+
         </View>
+
 
     )
 }
@@ -35,12 +36,15 @@ const BookingHeader = () => {
 export default BookingHeader
 
 const styles = StyleSheet.create({
-    header: {
+    container: {
         backgroundColor: theme.colors.primary,
         width: '100%',
-        height: hp('10%'),
+        height: normalize(80),
         alignItems: 'center',
-        justifyContent: 'center'
+        alignSelf: 'center',
+        justifyContent: 'space-between',
+        flexDirection: 'row'
+
     },
     goBackContainer: {
         flexDirection: 'row',

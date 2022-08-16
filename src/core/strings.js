@@ -14,8 +14,13 @@ export const Strings = {
     SetupSeatingPlan: "Setup Your Seating Plan",
     SelectDesk: 'Select desk for your team',
     HereHowWork: 'Here How it Works',
-    OneSelected: 'One Selected, that resource is assigned to your  member'
-
+    OneSelected: 'One Selected, that resource is assigned to your  member',
+    SelectSeat: 'Select Seat',
+    Available: 'Available',
+    Booked: 'Booked',
+    NAvailable: 'Not Available',
+    ConfirmSeat: 'confirm Seat',
+    PrivateOffice: 'Private Office'
 
 
 
@@ -24,12 +29,14 @@ export const FontFamilyName = {
     Frutiger_Bold_Family: 'Frutiger_bold',
     FrutigerFamily: 'Frutiger',
     PoppinsFamily: 'Poppins-Regular',
-    PoppinBoldFamily: 'Poppins-Bold'
+    PoppinBoldFamily: 'Poppins-Bold',
+    Montserrat: 'Montserrat-Regular'
 
 }
 export const ScreenName = {
     HomeScreen: 'HomeScreen',
     BookingScreen: 'BookingScreen',
     SelectionBookingScreen: 'SelectionBookingScreen',
-    CompleteBookingScreen: 'CompleteBookingScreen'
+    CompleteBookingScreen: 'CompleteBookingScreen',
+    SelectSeatScreen: 'SelectSeatScreen',
 }

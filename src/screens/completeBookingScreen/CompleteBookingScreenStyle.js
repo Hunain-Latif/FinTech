@@ -13,9 +13,9 @@ export default StyleSheet.create({
     },
     headingStyle: {
         fontFamily: FontFamilyName.FrutigerFamily,
-        fontSize: normalize(25),
+        fontSize: normalize(20),
         color: theme.colors.primary,
-        paddingTop: 30,
+        paddingTop: 10,
         paddingLeft: 20
     },
     subHeadingStyle: {
@@ -52,11 +52,43 @@ export default StyleSheet.create({
     headingTextContainer: {
         fontSize: normalize(15),
         fontFamily: FontFamilyName.FrutigerFamily,
+        color: theme.colors.primary
 
     },
     buttonStyle: {
         backgroundColor: theme.colors.secondary,
         marginVertical: 20
+    },
+    seatSubContainer: {
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        alignItems: 'center',
+        width: '90%',
+        alignSelf: 'center',
+        marginTop: 15,
+
+    },
+    seatTextStyle: {
+        fontFamily: FontFamilyName.Montserrat,
+        fontSize: normalize(24),
+        color: theme.colors.primary,
+
+    },
+    selectSeatTextStyle: {
+        fontFamily: FontFamilyName.Montserrat,
+        fontSize: normalize(12),
+        color: theme.colors.primary,
+    },
+    selectSeatButtonStyle: {
+        borderWidth: 1,
+        width: 94,
+        height: 37,
+        borderRadius: 20,
+        borderColor: theme.colors.primary,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: theme.colors.bgGrey,
+
     }
 
 })
